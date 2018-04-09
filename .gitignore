@@ -1,52 +1,38 @@
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int n,i,j;
+	int at[100],bt[n],t[100],w[100],p[n];
+	int awt=0,att=0;
+	printf("enter total no. of processes\n");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("enter arrival time of p[%d]");
+		scanf("%d",&p[i]);
+	}
+	for(j=0;j<n;j++)
+	{
+	printf("enter burst time of p[%d]");
+    scanf("%d",&bt[i]);	
+	}
+	for(i=0;i<n;i++)
+	{
+       t[i+1]=t[i]+bt[i];
+    }
+   for(i=0;i<n;i++)
+   {
+     w[i]=t[i]-at[i];
+     p[i]=t[i+1]-at[i];
+     awt=awt+w[i];
+     att=att+p[i];
+   }
+awt=awt/n;
+att=att/n;
+printf(awt,"\n",att);
+for(i=0;i<n;i++)
+{
+    printf(i," ",w[i]," ",p[i]);
+}
+}
